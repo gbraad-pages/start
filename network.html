@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Throughput</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column; /* Default to vertical */
+            height: 100vh;
+        }
+        iframe {
+            flex: 1;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="http://10.0.21.120:8080/?device=tun0"></iframe>
+    <iframe src="http://10.0.21.240:8080/?device=surftw0"></iframe>
+    <script>
+        function updateOrientation() {
+            document.body.style.flexDirection = window.innerWidth > window.innerHeight ? 'row' : 'column';
+        }
+        window.addEventListener('resize', updateOrientation);
+        updateOrientation(); // Set initial orientation
+    </script>
+</body>
+</html>
